@@ -30,7 +30,52 @@ class transactionService {
   }
 
   async getReportByType(){
-    
+    const pipeline = [
+        { 
+            "$group" : {
+                "_id" : null, 
+                "total" : {
+                    "$sum" : 1.0
+                }, 
+                "EXPANSE" : {
+                    "$sum" : {
+                        "$cond" : [
+                            {
+                                "$eq" : [
+                                    "$type", 
+                                    "EXPANSE"
+                                ]
+                            }, 
+                            1.0, 
+                            0.0
+                        ]
+                    }
+                }, 
+                "INCOME" : {
+                    "$sum" : {
+                        "$cond" : [
+                            {
+                                "$eq" : [
+                                    "$type", 
+                                    "INCOME"
+                                ]
+                            }, 
+                            1.0, 
+                            0.0
+                        ]
+                    }
+                }
+            }
+        }, 
+        { 
+            "$project" : {
+                "total" : 1.0, 
+                "EXPANSE" : 1.0, 
+                "INCOME" : 1.0
+            }
+        }
+    ];
+    return transactionModel.aggregate(pipeline);
   }
 
   async getReportByCategory(){

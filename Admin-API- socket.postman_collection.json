@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "f8105522-0608-4898-bc7d-8a1f1deafa58",
+		"name": "Admin-API- socket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6324262"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"type\": \"discription\",\r\n    \"description\": \"description\",\r\n    \"amount\": \"amount\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/create-task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"create-task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"type\": \"discription\",\r\n    \"description\": \"description\",\r\n    \"amount\": \"amount\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/update-task/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"update-task",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"type\": \"discription\",\r\n    \"description\": \"description\",\r\n    \"amount\": \"amount\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/task-by-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"type\": \"discription\",\r\n    \"description\": \"description\",\r\n    \"amount\": \"amount\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/remove-task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"remove-task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"type\": \"discription\",\r\n    \"description\": \"description\",\r\n    \"amount\": \"amount\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWVkYzI0YTliZmU5N2FlYjI2ZmM1NSIsImlhdCI6MTY3NjU5ODU0Mn0.n6ZfmJSQtRcd84TfJ0BpVU9eyLgpWdsh5y1TX7s9CG4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"EXPANSE\",\r\n    \"amount\": 200,\r\n    \"category\": \"OTHERS\",\r\n    \"date_time\": \"2023-02-16 02:45:00\",\r\n    \"mode\": \"CREDIT\",\r\n    \"description\": \"--\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/create-transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"create-transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWVkYzI0YTliZmU5N2FlYjI2ZmM1NSIsImlhdCI6MTY3NjU5ODU0Mn0.n6ZfmJSQtRcd84TfJ0BpVU9eyLgpWdsh5y1TX7s9CG4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/transactions?filterBy=last_month",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "OTHERS",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "EXPANSE",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": "2023-02-17",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "2023-02-17",
+									"disabled": true
+								},
+								{
+									"key": "filterBy",
+									"value": "last_month",
+									"description": "today,yesterday,This Month,Last month"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"nehul@gmail.com\",\r\n    \"password\":\"Aa123456\",\r\n    \"last_name\":\"tets\",\r\n    \"first_name\": \"test2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"nehul@gmail.com\",\r\n    \"password\":\"Aa123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		}
+	]
+}
